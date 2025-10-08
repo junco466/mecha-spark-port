@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Cpu, Cog, Network, Bot, Wrench, Database } from "lucide-react";
+import { Cpu, Cog, Network, Bot, Wrench, Database, Code2, Layers } from "lucide-react";
 
 const skills = [
   {
@@ -74,6 +74,62 @@ const Skills = () => {
         <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
           Comprehensive skill set spanning robotics, automation, and industrial IoT solutions
         </p>
+        
+        {/* Featured: Software Development & Hardware Integration */}
+        <Card className="max-w-5xl mx-auto mb-12 p-8 bg-gradient-to-br from-card to-accent/5 border-accent/20 shadow-lg animate-fade-in">
+          <div className="flex flex-col md:flex-row gap-6">
+            <div className="flex-shrink-0">
+              <div className="p-4 rounded-xl bg-accent/10 inline-block">
+                <Layers className="h-10 w-10 text-accent" />
+              </div>
+            </div>
+            <div className="flex-grow">
+              <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 flex items-center gap-3">
+                Software Development & Hardware Integration
+                <Code2 className="h-7 w-7 text-accent" />
+              </h3>
+              <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
+                Expertise in developing software solutions that directly interface with and control physical systems, 
+                providing <span className="text-accent font-semibold">full-stack, end-to-end automation solutions</span>.
+              </p>
+              
+              <div className="grid md:grid-cols-2 gap-6 mb-4">
+                <div>
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <span className="text-accent">▸</span>
+                    Integration Expertise
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Specialization in creating <strong>seamless bidirectional communication</strong> between software systems 
+                    (custom dashboards, cloud platforms, control logic) and physical hardware (robot arms, sensors, PLCs, 
+                    industrial machinery), including real-time data acquisition and command execution.
+                  </p>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <span className="text-accent">▸</span>
+                    Web Development for Industry
+                  </h4>
+                  <p className="text-sm text-muted-foreground leading-relaxed">
+                    Experience developing <strong>custom web-based interfaces and dashboards</strong> for remote monitoring, 
+                    control, and visualization of industrial processes (IIoT applications), enabling data analysis and 
+                    decision-making from any location.
+                  </p>
+                </div>
+              </div>
+              
+              <div className="flex flex-wrap gap-2 mt-4">
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">Python</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">JavaScript/TypeScript</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">React</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">REST APIs</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">MQTT/OPC-UA</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">Real-time Systems</span>
+                <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">Cloud Integration</span>
+              </div>
+            </div>
+          </div>
+        </Card>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {skills.map((skill, index) => {

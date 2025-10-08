@@ -1,5 +1,5 @@
 import { Card } from "@/components/ui/card";
-import { Briefcase, GraduationCap, Rocket } from "lucide-react";
+import { Briefcase, GraduationCap, Rocket, Factory } from "lucide-react";
 
 const experiences = [
   {
@@ -27,6 +27,20 @@ const experiences = [
       "Implemented IIoT solutions for industrial monitoring",
       "Collaborated on multiple automation projects",
       "Contributed to business development and technical strategy"
+    ]
+  },
+  {
+    icon: Factory,
+    title: "Base Plant Engineer",
+    organization: "Mincivil S.A.",
+    period: "Industrial Experience",
+    type: "Industry",
+    description: "Executed highly technical robotics and process engineering projects. Programmed industrial robot arm for HVOF (High-Velocity Oxygen Fuel) coating process with tungsten carbide, then took full charge of process organization, standardization, and documentation.",
+    achievements: [
+      "Programmed industrial robot arm for HVOF coating process",
+      "Standardized and documented complete manufacturing process",
+      "Managed maintenance and development of plant machinery",
+      "Operated and maintained CNC equipment and rolling machines"
     ]
   },
   {

@@ -2,8 +2,22 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { ExternalLink } from "lucide-react";
 import coffeeProject from "@/assets/coffee-vision-project.jpg";
+import peltonTurbine from "@/assets/pelton-turbine-coating.jpg";
 
 const projects = [
+  {
+    title: "Robotic Coating of Pelton Turbine Blade",
+    company: "Mincivil S.A.",
+    description: "Engineered and executed a complete robotic coating solution for Pelton turbine blades using HVOF technology. Managed the entire project lifecycle from robot programming and fixture design to process execution and quality optimization, ensuring enhanced durability and performance of critical turbine components.",
+    image: peltonTurbine,
+    technologies: ["Industrial Robotics", "HVOF Coating", "Process Engineering", "Fixture Design", "Quality Control", "CAD/CAM"],
+    highlights: [
+      "Programmed precise robot path for uniform coating application",
+      "Designed custom fixturing and setup for optimal blade positioning",
+      "Executed robotic coating process with strict quality and safety protocols",
+      "Conducted coating analysis for thickness, adhesion, and process optimization"
+    ]
+  },
   {
     title: "Coffee Bean Vision Classification System",
     company: "ASIMOV ROBOTICS S.A.",

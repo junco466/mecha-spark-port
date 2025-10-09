@@ -24,18 +24,14 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center animate-fade-in">
-        {/* Personal Introduction */}
-        <div className="mb-8 max-w-3xl mx-auto">
-          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
-            {t('hero.greeting')}
-          </p>
-        </div>
-
-        <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 mt-8">
+        <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
           {t('hero.title')}
         </h1>
-        <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
-          {t('hero.subtitle')}
+        <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-3xl mx-auto">
+          Industrial Automation | Robotics | IIoT Solutions
+        </p>
+        <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl mx-auto">
+          4+ years transforming industrial processes through cutting-edge automation and robotics technology
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">

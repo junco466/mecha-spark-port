@@ -1,8 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Mail } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import heroImage from "@/assets/hero-robotics.jpg";
 
 const Hero = () => {
+  const { t } = useLanguage();
+  
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
   };
@@ -21,14 +24,18 @@ const Hero = () => {
       
       {/* Content */}
       <div className="relative z-10 container mx-auto px-6 py-20 text-center animate-fade-in">
-        <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6">
-          Mechatronics Engineer
+        {/* Personal Introduction */}
+        <div className="mb-8 max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-primary-foreground/90 leading-relaxed">
+            {t('hero.greeting')}
+          </p>
+        </div>
+
+        <h1 className="text-5xl md:text-7xl font-bold text-primary-foreground mb-6 mt-8">
+          {t('hero.title')}
         </h1>
-        <p className="text-xl md:text-2xl text-primary-foreground/90 mb-4 max-w-3xl mx-auto">
-          Industrial Automation | Robotics | IIoT Solutions
-        </p>
-        <p className="text-lg text-primary-foreground/80 mb-12 max-w-2xl mx-auto">
-          4+ years transforming industrial processes through cutting-edge automation and robotics technology
+        <p className="text-xl md:text-2xl text-primary-foreground/90 mb-12 max-w-2xl mx-auto">
+          {t('hero.subtitle')}
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
@@ -37,7 +44,7 @@ const Hero = () => {
             className="bg-accent text-accent-foreground hover:opacity-90 transition-all hover:scale-105"
             onClick={() => scrollToSection("projects")}
           >
-            View Projects
+            {t('hero.cta')}
           </Button>
           <Button 
             size="lg"
@@ -46,7 +53,7 @@ const Hero = () => {
             onClick={() => scrollToSection("contact")}
           >
             <Mail className="mr-2 h-4 w-4" />
-            Get In Touch
+            {t('contact.title')}
           </Button>
         </div>
 
@@ -56,7 +63,7 @@ const Hero = () => {
           className="animate-bounce inline-flex flex-col items-center text-primary-foreground/80 hover:text-primary-foreground transition-colors"
           aria-label="Scroll to content"
         >
-          <span className="text-sm mb-2">Explore</span>
+          <span className="text-sm mb-2">{t('nav.about')}</span>
           <ArrowDown className="h-6 w-6" />
         </button>
       </div>

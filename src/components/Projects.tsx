@@ -1,53 +1,77 @@
+import { useState } from "react";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription } from "@/components/ui/dialog";
+import { Image } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 import coffeeProject from "@/assets/coffee-vision-project.jpg";
 import peltonTurbine from "@/assets/pelton-turbine-coating.jpg";
-
-const projects = [
-  {
-    title: "Robotic Coating of Pelton Turbine Blade",
-    company: "Mincivil S.A.",
-    description: "Engineered and executed a complete robotic coating solution for Pelton turbine blades using HVOF technology. Managed the entire project lifecycle from robot programming and fixture design to process execution and quality optimization, ensuring enhanced durability and performance of critical turbine components.",
-    image: peltonTurbine,
-    technologies: ["Industrial Robotics", "HVOF Coating", "Process Engineering", "Fixture Design", "Quality Control", "CAD/CAM"],
-    highlights: [
-      "Programmed precise robot path for uniform coating application",
-      "Designed custom fixturing and setup for optimal blade positioning",
-      "Executed robotic coating process with strict quality and safety protocols",
-      "Conducted coating analysis for thickness, adhesion, and process optimization"
-    ]
-  },
-  {
-    title: "Coffee Bean Vision Classification System",
-    company: "ASIMOV ROBOTICS S.A.",
-    description: "Developed an advanced computer vision classification system to automate coffee bean quality control. The system analyzes and separates coffee beans based on roast color and identifies defects, significantly improving processing efficiency and quality consistency.",
-    image: coffeeProject,
-    technologies: ["Computer Vision", "Machine Learning", "Industrial Automation", "Quality Control", "Image Processing"],
-    highlights: [
-      "Real-time classification of coffee beans by roast level",
-      "Automated defect detection reducing manual inspection time by 75%",
-      "Integration with industrial conveyor systems",
-      "Data analytics dashboard for quality metrics"
-    ]
-  }
-];
+import animatronicsProject from "@/assets/animatronics-project.jpg";
 
 const Projects = () => {
+  const { t } = useLanguage();
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+
+  const projects = [
+    {
+      id: "pelton",
+      title: t('projects.pelton.title'),
+      company: t('projects.pelton.company'),
+      description: t('projects.pelton.description'),
+      image: peltonTurbine,
+      technologies: ["Industrial Robotics", "HVOF Coating", "Process Engineering", "Fixture Design", "Quality Control", "CAD/CAM"],
+      highlights: [
+        t('projects.pelton.highlight1'),
+        t('projects.pelton.highlight2'),
+        t('projects.pelton.highlight3'),
+        t('projects.pelton.highlight4')
+      ]
+    },
+    {
+      id: "coffee",
+      title: t('projects.coffee.title'),
+      company: t('projects.coffee.company'),
+      description: t('projects.coffee.description'),
+      image: coffeeProject,
+      technologies: ["Computer Vision", "Machine Learning", "Industrial Automation", "Quality Control", "Image Processing"],
+      highlights: [
+        t('projects.coffee.highlight1'),
+        t('projects.coffee.highlight2'),
+        t('projects.coffee.highlight3'),
+        t('projects.coffee.highlight4')
+      ]
+    },
+    {
+      id: "animatronics",
+      title: t('projects.animatronics.title'),
+      company: t('projects.animatronics.company'),
+      description: t('projects.animatronics.description'),
+      image: animatronicsProject,
+      technologies: ["Mechanical Design", "Electronics", "Animatronics", "Theatre Tech", "Fabrication", "Control Systems"],
+      highlights: [
+        t('projects.animatronics.highlight1'),
+        t('projects.animatronics.highlight2'),
+        t('projects.animatronics.highlight3'),
+        t('projects.animatronics.highlight4')
+      ]
+    }
+  ];
+
   return (
     <section id="projects" className="py-20 bg-background">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">
-          Featured Projects
+          {t('projects.title')}
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-          Innovation in action: Real-world solutions that transform industrial processes
+          {t('projects.subtitle')}
         </p>
         
         <div className="max-w-5xl mx-auto space-y-8">
           {projects.map((project, index) => (
             <Card 
-              key={project.title}
+              key={project.id}
               className="overflow-hidden hover:shadow-xl transition-all border-border animate-fade-in"
               style={{ animationDelay: `${index * 0.2}s` }}
             >
@@ -75,10 +99,10 @@ const Projects = () => {
                   </div>
                   
                   <div className="mb-6">
-                    <h4 className="text-sm font-semibold text-foreground mb-3">Key Achievements:</h4>
+                    <h4 className="text-sm font-semibold text-foreground mb-3">{t('projects.keyAchievements')}</h4>
                     <ul className="space-y-2">
-                      {project.highlights.map((highlight) => (
-                        <li key={highlight} className="text-sm text-muted-foreground flex items-start gap-2">
+                      {project.highlights.map((highlight, idx) => (
+                        <li key={idx} className="text-sm text-muted-foreground flex items-start gap-2">
                           <span className="text-accent mt-1">✓</span>
                           <span>{highlight}</span>
                         </li>
@@ -86,7 +110,7 @@ const Projects = () => {
                     </ul>
                   </div>
                   
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mb-4">
                     {project.technologies.map((tech) => (
                       <Badge 
                         key={tech}
@@ -97,12 +121,43 @@ const Projects = () => {
                       </Badge>
                     ))}
                   </div>
+
+                  <Button
+                    onClick={() => setSelectedProject(project.id)}
+                    className="w-full mt-4 bg-primary hover:bg-primary/90 text-primary-foreground"
+                  >
+                    <Image className="mr-2 h-4 w-4" />
+                    {t('projects.viewGallery')}
+                  </Button>
                 </div>
               </div>
             </Card>
           ))}
         </div>
       </div>
+
+      {/* Modal Gallery */}
+      <Dialog open={selectedProject !== null} onOpenChange={() => setSelectedProject(null)}>
+        <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto">
+          <DialogHeader>
+            <DialogTitle>
+              {projects.find(p => p.id === selectedProject)?.title}
+            </DialogTitle>
+            <DialogDescription>
+              {t('projects.galleryPlaceholder')}
+            </DialogDescription>
+          </DialogHeader>
+          <div className="grid gap-4 py-4">
+            <div className="aspect-video bg-muted rounded-lg flex items-center justify-center">
+              <div className="text-center text-muted-foreground p-8">
+                <Image className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                <p className="text-lg font-medium mb-2">{t('projects.galleryPlaceholder')}</p>
+                <p className="text-sm">Project photos and technical diagrams will be displayed here</p>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };

@@ -1,18 +1,20 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
-
-const navItems = [
-  { label: "About", href: "#about" },
-  { label: "Skills", href: "#skills" },
-  { label: "Projects", href: "#projects" },
-  { label: "Experience", href: "#experience" },
-  { label: "Contact", href: "#contact" },
-];
+import { Menu, X, Globe } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
+
+  const navItems = [
+    { label: t('nav.about'), href: "#about" },
+    { label: t('nav.skills'), href: "#skills" },
+    { label: t('nav.projects'), href: "#projects" },
+    { label: t('nav.experience'), href: "#experience" },
+    { label: t('nav.contact'), href: "#contact" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,6 +28,10 @@ const Navigation = () => {
     const element = document.querySelector(href);
     element?.scrollIntoView({ behavior: "smooth" });
     setIsMobileMenuOpen(false);
+  };
+
+  const toggleLanguage = () => {
+    setLanguage(language === 'en' ? 'es' : 'en');
   };
 
   return (
@@ -45,11 +51,11 @@ const Navigation = () => {
                 isScrolled ? "text-foreground" : "text-primary-foreground"
               }`}
             >
-              Portfolio
+              {t('nav.portfolio')}
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navItems.map((item) => (
                 <button
                   key={item.label}
@@ -61,21 +67,46 @@ const Navigation = () => {
                   {item.label}
                 </button>
               ))}
+              
+              {/* Language Selector */}
+              <button
+                onClick={toggleLanguage}
+                className={`flex items-center gap-2 px-3 py-1 rounded-md border transition-all hover:bg-accent/10 ${
+                  isScrolled 
+                    ? "border-border text-foreground" 
+                    : "border-primary-foreground/30 text-primary-foreground"
+                }`}
+                title="Change language"
+              >
+                <Globe className="h-4 w-4" />
+                <span className="text-sm font-medium">{language.toUpperCase()}</span>
+              </button>
             </div>
 
             {/* Mobile Menu Button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="md:hidden"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            >
-              {isMobileMenuOpen ? (
-                <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
-              ) : (
-                <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
-              )}
-            </Button>
+            <div className="flex items-center gap-2 md:hidden">
+              <button
+                onClick={toggleLanguage}
+                className={`p-2 rounded-md border transition-all ${
+                  isScrolled 
+                    ? "border-border text-foreground" 
+                    : "border-primary-foreground/30 text-primary-foreground"
+                }`}
+              >
+                <Globe className="h-4 w-4" />
+              </button>
+              <Button
+                variant="ghost"
+                size="icon"
+                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              >
+                {isMobileMenuOpen ? (
+                  <X className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+                ) : (
+                  <Menu className={isScrolled ? "text-foreground" : "text-primary-foreground"} />
+                )}
+              </Button>
+            </div>
           </div>
         </div>
       </nav>

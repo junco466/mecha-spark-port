@@ -1,78 +1,51 @@
 import { Card } from "@/components/ui/card";
 import { Cpu, Cog, Network, Bot, Wrench, Database, Code2, Layers } from "lucide-react";
-
-const skills = [
-  {
-    category: "Industrial Robotics",
-    icon: Bot,
-    items: [
-      "Robot Arm Programming & Operation",
-      "Industrial Machinery Integration",
-      "Automated Manufacturing Systems",
-      "Safety & Compliance Standards"
-    ]
-  },
-  {
-    category: "CNC Operation",
-    icon: Cog,
-    items: [
-      "CNC Machine Programming",
-      "G-code Development",
-      "Precision Manufacturing",
-      "Quality Control & Optimization"
-    ]
-  },
-  {
-    category: "IIoT & Smart Systems",
-    icon: Network,
-    items: [
-      "Industrial Variable Monitoring",
-      "Bidirectional Communication Systems",
-      "Data-Driven Decision Making",
-      "Real-time Analytics & Reporting"
-    ]
-  },
-  {
-    category: "Computer Vision",
-    icon: Cpu,
-    items: [
-      "Image Classification Systems",
-      "Defect Detection",
-      "Quality Inspection Automation",
-      "Machine Learning Integration"
-    ]
-  },
-  {
-    category: "Technical Skills",
-    icon: Wrench,
-    items: [
-      "PLC Programming",
-      "System Integration",
-      "CAD/CAM Software",
-      "Technical Documentation"
-    ]
-  },
-  {
-    category: "Data & Analytics",
-    icon: Database,
-    items: [
-      "Process Optimization",
-      "Performance Metrics",
-      "Predictive Maintenance",
-      "Data Visualization"
-    ]
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Skills = () => {
+  const { t } = useLanguage();
+
+  const skills = [
+    {
+      icon: Cpu,
+      title: t('skills.robotics'),
+      description: t('skills.robotics.desc'),
+    },
+    {
+      icon: Cog,
+      title: t('skills.automation'),
+      description: t('skills.automation.desc'),
+    },
+    {
+      icon: Network,
+      title: t('skills.iiot'),
+      description: t('skills.iiot.desc'),
+    },
+    {
+      icon: Bot,
+      title: t('skills.vision'),
+      description: t('skills.vision.desc'),
+    },
+    {
+      icon: Wrench,
+      title: t('skills.mechanical'),
+      description: t('skills.mechanical.desc'),
+    },
+    {
+      icon: Database,
+      title: t('skills.plc'),
+      description: t('skills.plc.desc'),
+    },
+  ];
+
   return (
     <section id="skills" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">
-          Core Expertise
+          {t('skills.title')}
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-          Comprehensive skill set spanning robotics, automation, and industrial IoT solutions
+          {t('skills.subtitle')}
         </p>
         
         {/* Featured: Software Development & Hardware Integration */}
@@ -85,35 +58,30 @@ const Skills = () => {
             </div>
             <div className="flex-grow">
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-3 flex items-center gap-3">
-                Software Development & Hardware Integration
+                {t('skills.software.title')}
                 <Code2 className="h-7 w-7 text-accent" />
               </h3>
               <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-                Expertise in developing software solutions that directly interface with and control physical systems, 
-                providing <span className="text-accent font-semibold">full-stack, end-to-end automation solutions</span>.
+                {t('skills.software.description')}
               </p>
               
               <div className="grid md:grid-cols-2 gap-6 mb-4">
                 <div>
                   <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                     <span className="text-accent">▸</span>
-                    Integration Expertise
+                    {t('skills.software.integration')}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Specialization in creating <strong>seamless bidirectional communication</strong> between software systems 
-                    (custom dashboards, cloud platforms, control logic) and physical hardware (robot arms, sensors, PLCs, 
-                    industrial machinery), including real-time data acquisition and command execution.
+                    {t('skills.software.integration.desc')}
                   </p>
                 </div>
                 <div>
                   <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
                     <span className="text-accent">▸</span>
-                    Web Development for Industry
+                    {t('skills.software.web')}
                   </h4>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    Experience developing <strong>custom web-based interfaces and dashboards</strong> for remote monitoring, 
-                    control, and visualization of industrial processes (IIoT applications), enabling data analysis and 
-                    decision-making from any location.
+                    {t('skills.software.web.desc')}
                   </p>
                 </div>
               </div>
@@ -136,7 +104,7 @@ const Skills = () => {
             const Icon = skill.icon;
             return (
               <Card 
-                key={skill.category}
+                key={skill.title}
                 className="p-6 hover:shadow-lg transition-all hover:-translate-y-1 border-border animate-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -145,20 +113,12 @@ const Skills = () => {
                     <Icon className="h-6 w-6 text-accent" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">
-                    {skill.category}
+                    {skill.title}
                   </h3>
                 </div>
-                <ul className="space-y-2">
-                  {skill.items.map((item) => (
-                    <li 
-                      key={item}
-                      className="text-muted-foreground flex items-start gap-2"
-                    >
-                      <span className="text-accent mt-1.5">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="text-muted-foreground leading-relaxed">
+                  {skill.description}
+                </p>
               </Card>
             );
           })}

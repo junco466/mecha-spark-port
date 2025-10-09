@@ -1,0 +1,188 @@
+export const translations = {
+  en: {
+    // Navigation
+    'nav.about': 'About',
+    'nav.skills': 'Skills',
+    'nav.projects': 'Projects',
+    'nav.experience': 'Experience',
+    'nav.contact': 'Contact',
+    'nav.portfolio': 'Portfolio',
+    
+    // Hero
+    'hero.greeting': 'Hello! I\'m a Mechatronics Engineer with 4 years of experience specializing in industrial robotics, IIoT integration, and advanced automation processes. I am dedicated to bridging the gap between software systems and physical hardware to build efficient and standardized industrial solutions.',
+    'hero.title': 'Mechatronics Engineer',
+    'hero.subtitle': 'Automation & Robotics Specialist',
+    'hero.cta': 'View My Work',
+    
+    // About
+    'about.title': 'About Me',
+    'about.subtitle': 'Bridging the gap between hardware and software',
+    'about.intro': 'As a Mechatronics Engineer with specialized training in industrial robotics and process automation, I transform complex industrial challenges into elegant automated solutions.',
+    'about.passion': 'My passion lies in the intersection of mechanical systems, electronics, and intelligent software - creating solutions that are not just functional, but optimized for the real world.',
+    'about.experience': 'years of hands-on experience',
+    'about.projects': 'completed automation projects',
+    'about.systems': 'industrial systems optimized',
+    
+    // Skills
+    'skills.title': 'Technical Expertise',
+    'skills.subtitle': 'Comprehensive skill set spanning robotics, automation, and industrial IoT solutions',
+    'skills.software.title': 'Software Development & Hardware Integration',
+    'skills.software.description': 'Expertise in developing software solutions that directly interface with and control physical systems, providing full-stack, end-to-end automation solutions.',
+    'skills.software.integration': 'Integration Expertise',
+    'skills.software.integration.desc': 'Specialization in creating seamless bidirectional communication between software systems (custom dashboards, cloud platforms, control logic) and physical hardware (robot arms, sensors, PLCs, industrial machinery), including real-time data acquisition and command execution.',
+    'skills.software.web': 'Web Development for Industry',
+    'skills.software.web.desc': 'Experience developing custom web-based interfaces and dashboards for remote monitoring, control, and visualization of industrial processes (IIoT applications), enabling data analysis and decision-making from any location.',
+    'skills.robotics': 'Industrial Robotics',
+    'skills.robotics.desc': 'Programming and integration of industrial robot arms for complex manufacturing processes',
+    'skills.automation': 'Process Automation',
+    'skills.automation.desc': 'Design and implementation of automated systems for industrial efficiency',
+    'skills.iiot': 'Industrial IoT',
+    'skills.iiot.desc': 'Integration of smart sensors and cloud platforms for real-time monitoring',
+    'skills.vision': 'Computer Vision',
+    'skills.vision.desc': 'Machine learning applications for quality control and automated inspection',
+    'skills.mechanical': 'Mechanical Design',
+    'skills.mechanical.desc': 'CAD design and fixture development for custom automation solutions',
+    'skills.plc': 'PLC Programming',
+    'skills.plc.desc': 'Industrial control systems and safety protocols implementation',
+    
+    // Projects
+    'projects.title': 'Featured Projects',
+    'projects.subtitle': 'Innovation in action: Real-world solutions that transform industrial processes',
+    'projects.viewGallery': 'View Gallery',
+    'projects.keyAchievements': 'Key Achievements:',
+    'projects.closeGallery': 'Close Gallery',
+    'projects.galleryPlaceholder': 'Project images will be added here',
+    
+    'projects.pelton.title': 'Robotic Coating of Pelton Turbine Blade',
+    'projects.pelton.company': 'Mincivil S.A.',
+    'projects.pelton.description': 'Engineered and executed a complete robotic coating solution for Pelton turbine blades using HVOF technology. Managed the entire project lifecycle from robot programming and fixture design to process execution and quality optimization, ensuring enhanced durability and performance of critical turbine components.',
+    'projects.pelton.highlight1': 'Programmed precise robot path for uniform coating application',
+    'projects.pelton.highlight2': 'Designed custom fixturing and setup for optimal blade positioning',
+    'projects.pelton.highlight3': 'Executed robotic coating process with strict quality and safety protocols',
+    'projects.pelton.highlight4': 'Conducted coating analysis for thickness, adhesion, and process optimization',
+    
+    'projects.coffee.title': 'Coffee Bean Vision Classification System',
+    'projects.coffee.company': 'ASIMOV ROBOTICS S.A.',
+    'projects.coffee.description': 'Developed an advanced computer vision classification system to automate coffee bean quality control. The system analyzes and separates coffee beans based on roast color and identifies defects, significantly improving processing efficiency and quality consistency.',
+    'projects.coffee.highlight1': 'Real-time classification of coffee beans by roast level',
+    'projects.coffee.highlight2': 'Automated defect detection reducing manual inspection time by 75%',
+    'projects.coffee.highlight3': 'Integration with industrial conveyor systems',
+    'projects.coffee.highlight4': 'Data analytics dashboard for quality metrics',
+    
+    'projects.animatronics.title': 'Design and Build of 6 Animatronics for Theatre Performance 🎭',
+    'projects.animatronics.company': 'Independent Project - Neverland Theatre Academy',
+    'projects.animatronics.description': 'With an independent team, designed and built six custom animatronics representing endangered animals. This work was commissioned for Neverland Theatre Academy and featured in a performance held at Explora Park.',
+    'projects.animatronics.highlight1': 'Complete mechanical and structural design of 6 animatronic characters',
+    'projects.animatronics.highlight2': 'Fabrication and assembly of all movement systems',
+    'projects.animatronics.highlight3': 'Integration of control circuits and electronics for synchronized performance',
+    'projects.animatronics.highlight4': 'Collaboration with theatre professionals for artistic and technical requirements',
+    
+    // Experience
+    'experience.title': 'Professional Experience',
+    'experience.subtitle': 'Journey through industrial automation and robotics innovation',
+    'experience.present': 'Present',
+    
+    // Contact
+    'contact.title': 'Get In Touch',
+    'contact.subtitle': 'Let\'s discuss how automation can transform your operations',
+    'contact.email': 'Email',
+    'contact.phone': 'Phone',
+    'contact.linkedin': 'LinkedIn',
+    
+    // Footer
+    'footer.rights': '© 2025 Mechatronics Engineer Portfolio. All rights reserved.',
+  },
+  es: {
+    // Navigation
+    'nav.about': 'Acerca de',
+    'nav.skills': 'Habilidades',
+    'nav.projects': 'Proyectos',
+    'nav.experience': 'Experiencia',
+    'nav.contact': 'Contacto',
+    'nav.portfolio': 'Portafolio',
+    
+    // Hero
+    'hero.greeting': '¡Hola! Soy un Ingeniero Mecatrónico con 4 años de experiencia especializado en robótica industrial, integración IIoT y procesos de automatización avanzada. Me dedico a cerrar la brecha entre los sistemas de software y el hardware físico para construir soluciones industriales eficientes y estandarizadas.',
+    'hero.title': 'Ingeniero Mecatrónico',
+    'hero.subtitle': 'Especialista en Automatización y Robótica',
+    'hero.cta': 'Ver Mi Trabajo',
+    
+    // About
+    'about.title': 'Acerca de Mí',
+    'about.subtitle': 'Cerrando la brecha entre hardware y software',
+    'about.intro': 'Como Ingeniero Mecatrónico con formación especializada en robótica industrial y automatización de procesos, transformo desafíos industriales complejos en soluciones automatizadas elegantes.',
+    'about.passion': 'Mi pasión radica en la intersección de sistemas mecánicos, electrónica y software inteligente - creando soluciones que no solo son funcionales, sino optimizadas para el mundo real.',
+    'about.experience': 'años de experiencia práctica',
+    'about.projects': 'proyectos de automatización completados',
+    'about.systems': 'sistemas industriales optimizados',
+    
+    // Skills
+    'skills.title': 'Experiencia Técnica',
+    'skills.subtitle': 'Conjunto completo de habilidades que abarca robótica, automatización y soluciones industriales IoT',
+    'skills.software.title': 'Desarrollo de Software e Integración de Hardware',
+    'skills.software.description': 'Experiencia en el desarrollo de soluciones de software que se interfieren directamente y controlan sistemas físicos, proporcionando soluciones de automatización full-stack de extremo a extremo.',
+    'skills.software.integration': 'Experiencia en Integración',
+    'skills.software.integration.desc': 'Especialización en crear comunicación bidireccional fluida entre sistemas de software (paneles personalizados, plataformas en la nube, lógica de control) y hardware físico (brazos robóticos, sensores, PLCs, maquinaria industrial), incluyendo adquisición de datos en tiempo real y ejecución de comandos.',
+    'skills.software.web': 'Desarrollo Web para la Industria',
+    'skills.software.web.desc': 'Experiencia desarrollando interfaces web personalizadas y paneles de control para monitoreo remoto, control y visualización de procesos industriales (aplicaciones IIoT), permitiendo análisis de datos y toma de decisiones desde cualquier ubicación.',
+    'skills.robotics': 'Robótica Industrial',
+    'skills.robotics.desc': 'Programación e integración de brazos robóticos industriales para procesos de fabricación complejos',
+    'skills.automation': 'Automatización de Procesos',
+    'skills.automation.desc': 'Diseño e implementación de sistemas automatizados para eficiencia industrial',
+    'skills.iiot': 'IoT Industrial',
+    'skills.iiot.desc': 'Integración de sensores inteligentes y plataformas en la nube para monitoreo en tiempo real',
+    'skills.vision': 'Visión por Computadora',
+    'skills.vision.desc': 'Aplicaciones de aprendizaje automático para control de calidad e inspección automatizada',
+    'skills.mechanical': 'Diseño Mecánico',
+    'skills.mechanical.desc': 'Diseño CAD y desarrollo de fixtures para soluciones de automatización personalizadas',
+    'skills.plc': 'Programación PLC',
+    'skills.plc.desc': 'Sistemas de control industrial e implementación de protocolos de seguridad',
+    
+    // Projects
+    'projects.title': 'Proyectos Destacados',
+    'projects.subtitle': 'Innovación en acción: Soluciones del mundo real que transforman procesos industriales',
+    'projects.viewGallery': 'Ver Galería',
+    'projects.keyAchievements': 'Logros Clave:',
+    'projects.closeGallery': 'Cerrar Galería',
+    'projects.galleryPlaceholder': 'Las imágenes del proyecto se agregarán aquí',
+    
+    'projects.pelton.title': 'Recubrimiento Robótico de Álabe de Turbina Pelton',
+    'projects.pelton.company': 'Mincivil S.A.',
+    'projects.pelton.description': 'Diseñé y ejecuté una solución completa de recubrimiento robótico para álabes de turbinas Pelton utilizando tecnología HVOF. Gestioné todo el ciclo de vida del proyecto desde la programación del robot y el diseño de fixtures hasta la ejecución del proceso y optimización de calidad, asegurando mayor durabilidad y rendimiento de componentes críticos de turbina.',
+    'projects.pelton.highlight1': 'Programé trayectoria precisa del robot para aplicación uniforme de recubrimiento',
+    'projects.pelton.highlight2': 'Diseñé fixtures personalizados y configuración para posicionamiento óptimo del álabe',
+    'projects.pelton.highlight3': 'Ejecuté proceso de recubrimiento robótico con estrictos protocolos de calidad y seguridad',
+    'projects.pelton.highlight4': 'Realicé análisis de recubrimiento para espesor, adhesión y optimización del proceso',
+    
+    'projects.coffee.title': 'Sistema de Clasificación por Visión de Granos de Café',
+    'projects.coffee.company': 'ASIMOV ROBOTICS S.A.',
+    'projects.coffee.description': 'Desarrollé un sistema avanzado de clasificación por visión por computadora para automatizar el control de calidad de granos de café. El sistema analiza y separa granos de café según el color del tostado e identifica defectos, mejorando significativamente la eficiencia del procesamiento y la consistencia de la calidad.',
+    'projects.coffee.highlight1': 'Clasificación en tiempo real de granos de café por nivel de tostado',
+    'projects.coffee.highlight2': 'Detección automatizada de defectos reduciendo el tiempo de inspección manual en 75%',
+    'projects.coffee.highlight3': 'Integración con sistemas de cintas transportadoras industriales',
+    'projects.coffee.highlight4': 'Panel de análisis de datos para métricas de calidad',
+    
+    'projects.animatronics.title': 'Diseño y Construcción de 6 Animatrónicos para Teatro 🎭',
+    'projects.animatronics.company': 'Proyecto Independiente - Neverland Theatre Academy',
+    'projects.animatronics.description': 'Con un equipo independiente, diseñamos y construimos seis animatrónicos personalizados que representan animales en peligro de extinción. Este trabajo fue encargado por Neverland Theatre Academy y presentado en una actuación realizada en Explora Park.',
+    'projects.animatronics.highlight1': 'Diseño mecánico y estructural completo de 6 personajes animatrónicos',
+    'projects.animatronics.highlight2': 'Fabricación y ensamblaje de todos los sistemas de movimiento',
+    'projects.animatronics.highlight3': 'Integración de circuitos de control y electrónica para actuación sincronizada',
+    'projects.animatronics.highlight4': 'Colaboración con profesionales del teatro para requisitos artísticos y técnicos',
+    
+    // Experience
+    'experience.title': 'Experiencia Profesional',
+    'experience.subtitle': 'Trayectoria a través de la innovación en automatización industrial y robótica',
+    'experience.present': 'Presente',
+    
+    // Contact
+    'contact.title': 'Contacto',
+    'contact.subtitle': 'Discutamos cómo la automatización puede transformar sus operaciones',
+    'contact.email': 'Correo',
+    'contact.phone': 'Teléfono',
+    'contact.linkedin': 'LinkedIn',
+    
+    // Footer
+    'footer.rights': '© 2025 Portafolio de Ingeniero Mecatrónico. Todos los derechos reservados.',
+  },
+};

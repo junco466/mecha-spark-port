@@ -9,10 +9,11 @@ export const translations = {
     'nav.portfolio': 'Portfolio',
     
     // Hero
-    'hero.greeting': 'Hello! I\'m a Mechatronics Engineer with 4 years of experience specializing in industrial robotics, IIoT integration, and advanced automation processes. I am dedicated to bridging the gap between software systems and physical hardware to build efficient and standardized industrial solutions.',
+    'hero.greeting': 'Hello! I\'m a Mechatronics Engineer with 4 years of experience on industrial robotics, IIoT integration, and advanced automation processes. I am dedicated to bridging the gap between software systems and physical hardware to build efficient and standardized solutions.',
     'hero.title': 'Mechatronics Engineer',
-    'hero.subtitle': 'Automation & Robotics Specialist',
+    'hero.subtitle': 'Industrial Automation | Robotics | IIoT Solutions',
     'hero.cta': 'View My Work',
+    'hero.desc': 'Over 4 years designing, developing, and implementing custom-tailored technological solutions',
     
     // About
     'about.title': 'About Me',
@@ -102,10 +103,11 @@ export const translations = {
     'nav.portfolio': 'Portafolio',
     
     // Hero
-    'hero.greeting': '¡Hola! Soy un Ingeniero Mecatrónico con 4 años de experiencia especializado en robótica industrial, integración IIoT y procesos de automatización avanzada. Me dedico a cerrar la brecha entre los sistemas de software y el hardware físico para construir soluciones industriales eficientes y estandarizadas.',
+    'hero.greeting': '¡Hola! Soy un Ingeniero Mecatrónico con 4 años de experiencia en robótica industrial, integración IIoT y procesos de automatización avanzada. Me dedico a cerrar la brecha entre los sistemas de software y el hardware físico para construir soluciones eficientes y estandarizadas.',
     'hero.title': 'Ingeniero Mecatrónico',
-    'hero.subtitle': 'Especialista en Automatización y Robótica',
+    'hero.subtitle': 'Automatizacion Industrial | Robotica | Soluciones IIoT',
     'hero.cta': 'Ver Mi Trabajo',
+    'hero.desc': '+4 años diseñando, desarrollando e implementando soluciones tecnológicas personalizadas',
     
     // About
     'about.title': 'Acerca de Mí',

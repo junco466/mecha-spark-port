@@ -16,9 +16,9 @@ const About = () => {
           </p>
           
           <Card className="p-8 md:p-12 shadow-lg border-border hover:shadow-xl transition-all">
-            <div className="grid md:grid-cols-[200px_1fr] gap-8 items-start">
+            <div className="grid  gap-8 items-start">
               {/* Photo Placeholder */}
-              <div className="mx-auto md:mx-0">
+              <div className=" block mx-auto md:mx-0 md:hidden">
                 <div className="w-48 h-48 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 border-4 border-accent/30 flex items-center justify-center overflow-hidden">
                   <div className="text-center text-muted-foreground p-4">
                     <p className="text-sm font-medium">Your Photo Here</p>
@@ -35,9 +35,9 @@ const About = () => {
                   </p>
                 </div>
                 
-                <p className="text-lg leading-relaxed">
+                {/* <p className="text-lg leading-relaxed">
                   {t('about.intro')}
-                </p>
+                </p> */}
                 
                 <p className="text-lg leading-relaxed text-muted-foreground">
                   {t('about.passion')}
@@ -52,11 +52,11 @@ const About = () => {
                 <div className="text-sm text-muted-foreground">{t('about.experience')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">10+</div>
+                <div className="text-3xl font-bold text-accent mb-2">5+</div>
                 <div className="text-sm text-muted-foreground">{t('about.projects')}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-accent mb-2">15+</div>
+                <div className="text-3xl font-bold text-accent mb-2">6+</div>
                 <div className="text-sm text-muted-foreground">{t('about.systems')}</div>
               </div>
             </div>

@@ -31,8 +31,8 @@ const Hero = () => {
           <div className="mx-auto md:mx-0 my-auto justify-center hidden md:block">
             <div className="w-48 h-48 rounded-full bg-gradient-to-br from-accent/20 to-primary/20 border-4 border-accent/30 flex items-center justify-center overflow-hidden">
               <div className="text-center text-muted-foreground p-4">
-                <p className="text-sm font-medium">Your Photo Here</p>
-                <p className="text-xs mt-1">Upload your professional headshot</p>
+                <p className="text-sm font-medium">{t('ui.photoPlaceholder')}</p>
+                <p className="text-xs mt-1">{t('ui.uploadPhoto')}</p>
               </div>
             </div>
           </div>

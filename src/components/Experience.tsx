@@ -1,73 +1,76 @@
 import { Card } from "@/components/ui/card";
 import { Briefcase, GraduationCap, Rocket, Factory } from "lucide-react";
-
-const experiences = [
-  {
-    icon: GraduationCap,
-    title: "Robotics & Technology Educator",
-    organization: "Education Sector",
-    period: "Current",
-    type: "Teaching",
-    description: "Teaching children about robotics, technology, and systems. Developing curriculum and hands-on learning experiences that introduce the next generation to engineering concepts.",
-    achievements: [
-      "Created engaging robotics curriculum for young learners",
-      "Simplified complex engineering concepts for educational purposes",
-      "Fostered interest in STEM fields among students"
-    ]
-  },
-  {
-    icon: Rocket,
-    title: "Co-Founder & Engineer",
-    organization: "ASIMOV ROBOTICS S.A.",
-    period: "4 Years",
-    type: "Entrepreneurship",
-    description: "Participated in startup focused on innovative technological solutions for industrial applications. Led development of computer vision systems and automation projects.",
-    achievements: [
-      "Developed computer vision classification system for coffee industry",
-      "Implemented IIoT solutions for industrial monitoring",
-      "Collaborated on multiple automation projects",
-      "Contributed to business development and technical strategy"
-    ]
-  },
-  {
-    icon: Factory,
-    title: "Base Plant Engineer",
-    organization: "Mincivil S.A.",
-    period: "Industrial Experience",
-    type: "Industry",
-    description: "Executed highly technical robotics and process engineering projects. Programmed industrial robot arm for HVOF (High-Velocity Oxygen Fuel) coating process with tungsten carbide, then took full charge of process organization, standardization, and documentation.",
-    achievements: [
-      "Programmed industrial robot arm for HVOF coating process",
-      "Standardized and documented complete manufacturing process",
-      "Managed maintenance and development of plant machinery",
-      "Operated and maintained CNC equipment and rolling machines"
-    ]
-  },
-  {
-    icon: Briefcase,
-    title: "Industrial Automation Engineer",
-    organization: "Manufacturing Sector",
-    period: "4+ Years Total",
-    type: "Industry",
-    description: "Extensive hands-on experience with industrial robotics, CNC machines, and IIoT implementations across various manufacturing environments.",
-    achievements: [
-      "Programmed and operated industrial robot arms",
-      "Optimized CNC machining processes",
-      "Implemented data-driven decision systems",
-      "Managed industrial equipment maintenance and upgrades"
-    ]
-  }
-];
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Experience = () => {
+  const { t } = useLanguage();
+  
+  const experiences = [
+    {
+      icon: GraduationCap,
+      title: t('experience.educator.title'),
+      organization: t('experience.educator.organization'),
+      period: t('experience.educator.period'),
+      type: "Teaching",
+      description: t('experience.educator.description'),
+      achievements: [
+        t('experience.educator.achievement1'),
+        t('experience.educator.achievement2'),
+        t('experience.educator.achievement3'),
+      ]
+    },
+    {
+      icon: Rocket,
+      title: t('experience.cofounder.title'),
+      organization: t('experience.cofounder.organization'),
+      period: t('experience.cofounder.period'),
+      type: "Entrepreneurship",
+      description: t('experience.cofounder.description'),
+      achievements: [
+        t('experience.cofounder.achievement1'),
+        t('experience.cofounder.achievement2'),
+        t('experience.cofounder.achievement3'),
+        t('experience.cofounder.achievement4'),
+      ]
+    },
+    {
+      icon: Factory,
+      title: t('experience.plant.title'),
+      organization: t('experience.plant.organization'),
+      period: t('experience.plant.period'),
+      type: "Industry",
+      description: t('experience.plant.description'),
+      achievements: [
+        t('experience.plant.achievement1'),
+        t('experience.plant.achievement2'),
+        t('experience.plant.achievement3'),
+        t('experience.plant.achievement4'),
+      ]
+    },
+    {
+      icon: Briefcase,
+      title: t('experience.automation.title'),
+      organization: t('experience.automation.organization'),
+      period: t('experience.automation.period'),
+      type: "Industry",
+      description: t('experience.automation.description'),
+      achievements: [
+        t('experience.automation.achievement1'),
+        t('experience.automation.achievement2'),
+        t('experience.automation.achievement3'),
+        t('experience.automation.achievement4'),
+      ]
+    }
+  ];
+  
   return (
     <section id="experience" className="py-20 bg-muted/30">
       <div className="container mx-auto px-6">
         <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">
-          Professional Journey
+          {t('experience.title')}
         </h2>
         <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-          From industrial automation to education, driving innovation at every stage
+          {t('experience.subtitle')}
         </p>
         
         <div className="max-w-4xl mx-auto space-y-6">
@@ -108,7 +111,7 @@ const Experience = () => {
                     </p>
                     
                     <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-2">Key Contributions:</h4>
+                      <h4 className="text-sm font-semibold text-foreground mb-2">{t('experience.keyContributions')}</h4>
                       <ul className="space-y-2">
                         {exp.achievements.map((achievement) => (
                           <li 

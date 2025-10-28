@@ -32,7 +32,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-sm font-medium text-foreground">{t('contact.email')}</div>
-                      <span>your.email@example.com</span>
+                      <span>jsbalbin466@gmail.com</span>
                     </div>
                   </div>
                   
@@ -42,7 +42,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-sm font-medium text-foreground">{t('contact.phone')}</div>
-                      <span>+XX XXX XXX XXXX</span>
+                      <span>+57 3136435245</span>
                     </div>
                   </div>
                   
@@ -52,7 +52,7 @@ const Contact = () => {
                     </div>
                     <div>
                       <div className="text-sm font-medium text-foreground">Location</div>
-                      <span>Your Location</span>
+                      <span>Medellin, Colombia</span>
                     </div>
                   </div>
                 </div>

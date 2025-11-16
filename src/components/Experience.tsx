@@ -1,4 +1,6 @@
+
 import { Card } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { Briefcase, GraduationCap, Rocket, Factory } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -11,124 +13,108 @@ const Experience = () => {
       title: t('experience.educator.title'),
       organization: t('experience.educator.organization'),
       period: t('experience.educator.period'),
-      type: "Teaching",
-      description: t('experience.educator.description'),
-      achievements: [
-        t('experience.educator.achievement1'),
-        t('experience.educator.achievement2'),
-        t('experience.educator.achievement3'),
-      ]
+      color: "from-purple-500 to-pink-500",
+      keyAchievement: t('experience.educator.achievement')
     },
     {
       icon: Rocket,
       title: t('experience.cofounder.title'),
       organization: t('experience.cofounder.organization'),
       period: t('experience.cofounder.period'),
-      type: "Entrepreneurship",
-      description: t('experience.cofounder.description'),
-      achievements: [
-        t('experience.cofounder.achievement1'),
-        t('experience.cofounder.achievement2'),
-        t('experience.cofounder.achievement3'),
-        t('experience.cofounder.achievement4'),
-      ]
+      color: "from-blue-500 to-cyan-500",
+      keyAchievement: t('experience.cofounder.achievement')
     },
     {
       icon: Factory,
       title: t('experience.plant.title'),
       organization: t('experience.plant.organization'),
       period: t('experience.plant.period'),
-      type: "Industry",
-      description: t('experience.plant.description'),
-      achievements: [
-        t('experience.plant.achievement1'),
-        t('experience.plant.achievement2'),
-        t('experience.plant.achievement3'),
-        t('experience.plant.achievement4'),
-      ]
+      color: "from-orange-500 to-red-500",
+      keyAchievement: t('experience.plant.achievement')
     },
     {
       icon: Briefcase,
       title: t('experience.automation.title'),
       organization: t('experience.automation.organization'),
       period: t('experience.automation.period'),
-      type: "Industry",
-      description: t('experience.automation.description'),
-      achievements: [
-        t('experience.automation.achievement1'),
-        t('experience.automation.achievement2'),
-        t('experience.automation.achievement3'),
-        t('experience.automation.achievement4'),
-      ]
+      color: "from-green-500 to-emerald-500",
+      keyAchievement: t('experience.automation.achievement')
     }
   ];
-  
+
   return (
-    <section id="experience" className="py-20 bg-muted/30">
+    <section id="experience" className="py-20 bg-gradient-to-b from-slate-50 to-white">
       <div className="container mx-auto px-6">
-        <h2 className="text-4xl md:text-5xl font-bold text-center mb-4 text-foreground animate-fade-in">
-          {t('experience.title')}
-        </h2>
-        <p className="text-center text-muted-foreground mb-12 text-lg max-w-2xl mx-auto">
-          {t('experience.subtitle')}
-        </p>
-        
-        <div className="max-w-4xl mx-auto space-y-6">
-          {experiences.map((exp, index) => {
-            const Icon = exp.icon;
-            return (
-              <Card 
-                key={exp.title}
-                className="p-6 md:p-8 hover:shadow-lg transition-all border-border animate-slide-in"
-                style={{ animationDelay: `${index * 0.15}s` }}
-              >
-                <div className="flex flex-col md:flex-row gap-6">
-                  <div className="flex-shrink-0">
-                    <div className="p-4 rounded-lg bg-accent/10 inline-block">
-                      <Icon className="h-8 w-8 text-accent" />
-                    </div>
-                  </div>
-                  
-                  <div className="flex-grow">
-                    <div className="flex flex-col md:flex-row md:items-start md:justify-between mb-3">
-                      <div>
-                        <h3 className="text-xl md:text-2xl font-bold text-foreground mb-1">
-                          {exp.title}
-                        </h3>
-                        <p className="text-lg text-primary font-semibold">
-                          {exp.organization}
-                        </p>
-                      </div>
-                      <div className="flex gap-3 mt-2 md:mt-0">
-                        <span className="px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-medium">
-                          {exp.period}
-                        </span>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">
+            {t('experience.title')}
+          </h2>
+          <p className="text-lg text-slate-600 max-w-2xl mx-auto">
+            {t('experience.subtitle')}
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto">
+          {/* Timeline vertical */}
+          <div className="relative">
+            {/* Línea vertical */}
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-orange-500 via-blue-500 to-purple-500"></div>
+
+            <div className="space-y-12">
+              {experiences.map((exp, index) => {
+                const Icon = exp.icon;
+                const isLeft = index % 2 === 0;
+
+                return (
+                  <div
+                    key={exp.title}
+                    className={`relative flex items-center ${
+                      isLeft ? "md:flex-row" : "md:flex-row-reverse"
+                    } flex-row`}
+                  >
+                    {/* Icono central */}
+                    <div className="absolute left-8 md:left-1/2 -translate-x-1/2 z-10">
+                      <div className={`p-3 rounded-full bg-gradient-to-br ${exp.color} shadow-lg`}>
+                        <Icon className="h-6 w-6 text-white" />
                       </div>
                     </div>
-                    
-                    <p className="text-muted-foreground mb-4 leading-relaxed">
-                      {exp.description}
-                    </p>
-                    
-                    <div>
-                      <h4 className="text-sm font-semibold text-foreground mb-2">{t('experience.keyContributions')}</h4>
-                      <ul className="space-y-2">
-                        {exp.achievements.map((achievement) => (
-                          <li 
-                            key={achievement}
-                            className="text-sm text-muted-foreground flex items-start gap-2"
-                          >
-                            <span className="text-accent mt-1">•</span>
-                            <span>{achievement}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+
+                    {/* Espaciador para móvil */}
+                    <div className="w-20 md:hidden"></div>
+
+                    {/* Espaciador para desktop */}
+                    <div className="hidden md:block md:w-1/2"></div>
+
+                    {/* Tarjeta de contenido */}
+                    <Card
+                      className={`flex-1 md:w-1/2 p-6 border-slate-200 hover:shadow-lg transition-all ${
+                        isLeft ? "md:mr-8" : "md:ml-8"
+                      }`}
+                    >
+                      <div className="flex items-start justify-between mb-3">
+                        <div>
+                          <Badge className={`mb-2 bg-gradient-to-r ${exp.color} text-white border-0`}>
+                            {exp.period}
+                          </Badge>
+                          <h3 className="text-xl font-bold text-slate-900">
+                            {exp.title}
+                          </h3>
+                          <p className="text-orange-600 font-semibold mt-1">
+                            {exp.organization}
+                          </p>
+                        </div>
+                      </div>
+
+                      {/* Solo 1 achievement key, más compacto */}
+                      <p className="text-slate-600 text-sm leading-relaxed">
+                        {exp.keyAchievement}
+                      </p>
+                    </Card>
                   </div>
-                </div>
-              </Card>
-            );
-          })}
+                );
+              })}
+            </div>
+          </div>
         </div>
       </div>
     </section>
